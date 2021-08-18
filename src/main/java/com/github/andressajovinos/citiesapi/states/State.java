@@ -5,7 +5,6 @@ import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -26,11 +25,7 @@ public class State {
 
     private Integer ibge;
 
-  // 1st
-//  @Column(name = "pais")
-//  private Integer countryId;
-
-//     2nd - @ManyToOne
+//  2nd - @ManyToOne
     @ManyToOne
     @JoinColumn(name = "pais", referencedColumnName = "id")
     private Country country;
@@ -67,7 +62,4 @@ public class State {
         return country;
     }
 
-  /*public Integer getCountryId() {
-      return countryId;
-  }*/
 }
